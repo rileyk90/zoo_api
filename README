@@ -1,0 +1,13 @@
+The test suite included is meant to run as a collection. DO NOT attempt to run tests out of order as this will result in incorrect global variables.
+
+There are A LOT of requests and tests. I have separated them into sub-collections to make checking the tests a litt/e more maneagable. You still MUST execute the sub-collections in order!
+
+If you choose to run the entire collection as a whole, you MUST set a Delay of 20 ms at a MINIMUM.
+
+RECOMMENDED METHOD: If you choose to run the tests one sub-collection at a time, you MUST ensure to check the "Keep variable values" to true for EACH sub-collection run. I also recommend setting a DElay of at least 5 ms. Also, you must clear all the Global and Environment variables, EXCEPT for {{app_base_url}}, after completing the entire test collection if you wish run it again.
+
+I have created existing objects in my GAE datastore and in the Auth0 API in order to set the stage for my test suite. DO NOT attempt alter or delete the original objects I have provided, nor any hard coded information in the Postman test suite. These are REQUIRED to run my test collection.
+
+The included test environment defines global variables for the base url of my live app, the Client Authentication for creating Auth0 users, as well as the User Authentication for all other requests.
+
+NOTE: I have experienced some Postman requests executing before the previous request responds, thus setting incorrect global variables and failing some of my tests, someimte crashing the suite. It is critical that this not happen as it could disorganize my GAE datastore and/or Auth0 user management to no longer work with the test suite. This is why you must set a Delay if running the test suite as a whole. Manual testing AFTER this kind of failure would not correct the problem. You would have to contact me to reset the datastore.
